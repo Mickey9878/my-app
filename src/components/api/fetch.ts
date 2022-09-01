@@ -1,7 +1,14 @@
 import fetch from 'isomorphic-unfetch'
 
-const getProps = async () => {
+
+// export interface Score {
+//   traderScore: number,
+//   diamondHand: number
+// }
+
+const getProps = async (account: string | null | undefined ) => {
     const url = "http://localhost:4000/address";
+    console.log(account)
   
     const response = await fetch(url, {
       mode: 'cors',
@@ -11,12 +18,14 @@ const getProps = async () => {
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify({query: "query"}),
+      body: JSON.stringify({address: account}),
     })
-    const data = await response.json();
-    console.log(data);
-    return { props: { data } }
-  
+    const scores = await response.json();
+    return {
+      props: {
+        scores,
+      },
+    }
 }
 
 export default getProps
