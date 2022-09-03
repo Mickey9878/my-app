@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Box, Button, Container, Flex, Grid, GridItem, SimpleGrid, Text } from '@chakra-ui/react'
 import getProps from '../src/components/api/fetch';
-import WalletModal from '../src/components/header/walletModal';
+import walletModal from '../src/components/header/walletModal';
 import SideNav from '../src/components/sideBar/SideNav';
 import Header from '../src/components/header/header';
 import { Stat } from '../src/components/main/card/stat';

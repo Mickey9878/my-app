@@ -16,7 +16,7 @@ import { useContext, useEffect } from 'react'
 import getProps from '../api/fetch'
 
 
-const WalletModal = () => {
+const walletModal = () => {
   let scores;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {activate, deactivate, active, account, library: provider} = useWeb3React();
@@ -66,4 +66,4 @@ const WalletModal = () => {
   )
 }
 
-export default WalletModal
+export default walletModal
